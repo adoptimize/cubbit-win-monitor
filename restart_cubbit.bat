@@ -1,4 +1,3 @@
-if not defined in_subprocess (cmd /k set in_subprocess=y ^& %0 %*) & exit 
 setlocal enabledelayedexpansion
 @echo off
 REM ##############################################################################
@@ -62,7 +61,7 @@ REM and take in account wether we have more pos. or neg. and if so we restart
 REM cubbit 
 REM -----------------------------------------------------------------------------
 :cubbit_performance
-    echo "tailing logfile !logfile! tail: !tailPath! -100 !logfile!"
+    echo "tailing logfile !logfile!"
     !tailPath! -100 !logfile! > !tailLog!
     set /a countUpload=1
 	set /a countError=1
