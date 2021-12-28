@@ -1,7 +1,7 @@
 # cubbit-win-monitor
 Monitors Cubbit.io on a Win System and if more errors occour than successfull uploads restart cubbit.exe
 
-REM ##############################################################################
+<br>REM ##############################################################################
 REM # this script will monitor cubbit. If too many upload errors will appear 
 REM # in the log, Cubbit will be stopped and restarted. 
 REM # If you have many files and some GB to be transfered to the swarm this 
