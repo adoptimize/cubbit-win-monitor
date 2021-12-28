@@ -83,10 +83,10 @@ REM ----------------------------------------------------------------------------
 	)
 
 	if %countUpload% GEQ %countError% (
-		echo "UploadCount: %countUpload% is greater or equal to " 
-        echo "ErrorCount: %countError% all fine. Nothing to do."
+		echo "UploadCount: %countUpload% is greater or equal to ErrorCount: %countError%"
+        echo "All fine. Nothing to do."
 	) else (
-		echo "%countUpload% is smaller %countError% so we restart "
+		echo "%countUpload% is smaller %countError% so we check error occurence in detail "
         set /a totalErrorCount=totalErrorCount+ 1
         echo "the total errors logged: !totalErrorCount!"
         echo "the total success logged: !totalSuccessCount!"
@@ -99,6 +99,7 @@ REM ----------------------------------------------------------------------------
         
        
         if !totalErrorCount! GTR 10 (
+            echo "More than ten errors in a row. Restart Cubbit.exe"
             set /a totalErrorCount=0
             set /a totalSuccessCount=0
             set /a countUpload=0
